@@ -19,14 +19,16 @@ b. TCP port number : 55639
 
 2. What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?
 
-```Answer:
+``` js
+Answer:
 a. IP address : 128.119.245.12
 b. Port : 80
 ```
 
 3. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in this TCP segment that identifies the segment as a SYN segment? Will the TCP receiver in this session be able to use Selective Acknowledgments?
 
-```Answer:
+``` js
+Answer:
 a. Sequence number (raw) : 4236649187
 b. Look at the flags in the TCP Control Bits to identify a segment as a SYN segment
 c. To determine if the TCP receiver will use Selective Acknowledgments, check the TCP options field in the initial SYN segment to see if it contains the SACK Permitted option. If it's present, then SACK is supported in that session.
@@ -34,7 +36,8 @@ c. To determine if the TCP receiver will use Selective Acknowledgments, check th
 
 4. What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is it in the segment that identifies the segment as a SYNACK segment? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value?
 
-```Answer:
+``` js
+Answer:
 a. Sequence number (raw) : 1068969752
 b. Look at the flags in the TCP Control Bits to identify a segment as a SYNACK segment
 c. Acknowledge number (raw) : 4236649188
@@ -46,7 +49,8 @@ d. Here's how gaia.cs.umass.edu determined that value:
 ```
  5. What is the sequence number of the TCP segment containing the header of the HTTP POST command?. How many bytes of data are contained in the payload (data) field of this TCP segment? Did all of the data in the transferred file alice.txt fit into this single segment?
 
-```Answer:
+``` js
+Answer:
 a. Sequence Number (raw) : 4236649188**
 b. Payload (data) size : 1448 bytes**
 c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt" is more than 152K bytes (where 1K is typically defined as 1024 bytes), then it's clear that the entire contents of "alice.txt" cannot fit into this single 1448-byte TCP segment.
@@ -54,11 +58,16 @@ c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt
 6.  Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.
 
 * At what time was the first segment (the one containing the HTTP POST) in the data-transfer part of the TCP connection sent?
-```Answer: 0.147682s```
+``` js
+Answer: 0.147682s
+```
 * At what time was the ACK for this first data-containing segment received?
-```Answer: 0.149626s```
+``` js
+Answer: 0.149626s
+```
 * What is the RTT for this first data-containing segment?
-```Answer:
+``` js
+Answer:
 RTT = ACK Timestamp - Segment Sending Timestamp**
 RTT = 0.149626s - 0.147682s**
 RTT = 0.001944
