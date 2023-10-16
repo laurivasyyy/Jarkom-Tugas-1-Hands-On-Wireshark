@@ -82,14 +82,14 @@ Answer: 0.149626s
 ``` 
 Answer:
 RTT = ACK Timestamp - Segment Sending Timestamp**
-RTT = 0.149626s - 0.147682s**
+RTT = 0.149626s - 0.147682s
 RTT = 0.001944
 ```
 * What is the RTT value the second data-carrying TCP segment and its ACK?
 ``` 
 Answer:
-RTT = ACK Timestamp - Segment Sending Timestamp**
-RTT = 0.149629s - 0.147682s**
+RTT = ACK Timestamp - Segment Sending Timestamp
+RTT = 0.149629s - 0.147682s
 RTT = 0.001947s
 ```
 * What is the EstimatedRTT value (see Section 3.5.3, in the text) after the ACK for the second data-carrying segment is received?
