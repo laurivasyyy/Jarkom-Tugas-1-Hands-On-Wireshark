@@ -11,11 +11,10 @@
 ### **TCP-Problems**
 1. What is the IP address and TCP port number used by the client computer (source) that is transferring the alice.txt file to gaia.cs.umass.edu?
 
-> **Answer:**
-
-> **a. IP address : 192.168.86.68**
-
-> **b. TCP port number : 55639**
+```Answer:
+a. IP address : 192.168.86.68
+b. TCP port number : 55639
+```
 
 2. What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?
 
