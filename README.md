@@ -193,6 +193,7 @@ fields is 2 bytes long
 ```
 
 3. The value in the Length field is the length of what?.Verify your claim with your captured UDP packet.
+![no3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-4.png)
 ```
 Answer :
 The length field specifies the number of bytes in the UDP segment 
@@ -204,8 +205,6 @@ The length of UDP payload for selected packet is 339 bytes.
 ```
 
 4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
-
-![no4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-4.png)
 ```
 Answer :
 The maximum number of bytes that can be included in a UDP payload is (2^16 – 1) bytes plus the header bytes. 
