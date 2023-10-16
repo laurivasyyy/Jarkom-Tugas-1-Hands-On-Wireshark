@@ -11,6 +11,7 @@
 ### **TCP-Problems**
 1. What is the IP address and TCP port number used by the client computer (source) that is transferring the alice.txt file to gaia.cs.umass.edu?
 
+![no-1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-1.png)
 ``` js
 Answer:
 a. IP address : 192.168.86.68
@@ -18,6 +19,8 @@ b. TCP port number : 55639
 ```
 
 2. What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP segments for this connection?
+
+![no-2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-2.png)
 
 ``` js
 Answer:
@@ -27,6 +30,7 @@ b. Port : 80
 
 3. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in this TCP segment that identifies the segment as a SYN segment? Will the TCP receiver in this session be able to use Selective Acknowledgments?
 
+![no-3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-3.png)
 ``` 
 Answer:
 a. Sequence number (raw) : 4236649187
@@ -35,6 +39,8 @@ c. To determine if the TCP receiver will use Selective Acknowledgments, check th
 ```
 
 4. What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is it in the segment that identifies the segment as a SYNACK segment? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value?
+
+![no-4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-4.png)
 
 ``` 
 Answer:
@@ -50,6 +56,7 @@ d. Here's how gaia.cs.umass.edu determined that value:
 ```
  5. What is the sequence number of the TCP segment containing the header of the HTTP POST command?. How many bytes of data are contained in the payload (data) field of this TCP segment? Did all of the data in the transferred file alice.txt fit into this single segment?
 
+![no-5](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-5.png)
 ``` 
 Answer:
 a. Sequence Number (raw) : 4236649188**
@@ -59,10 +66,14 @@ c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt
 ```
 6.  Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.
 
+![no-6a](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-6a.png)
 * At what time was the first segment (the one containing the HTTP POST) in the data-transfer part of the TCP connection sent?
 ``` js
 Answer: 0.147682s
 ```
+
+![no-6b](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-6b.png)
+
 * At what time was the ACK for this first data-containing segment received?
 ``` js
 Answer: 0.149626s
@@ -75,23 +86,67 @@ RTT = 0.149626s - 0.147682s**
 RTT = 0.001944
 ```
 * What is the RTT value the second data-carrying TCP segment and its ACK?
+``` 
+Answer:
+RTT = ACK Timestamp - Segment Sending Timestamp**
+RTT = 0.149629s - 0.147682s**
+RTT = 0.001947s
+```
 * What is the EstimatedRTT value (see Section 3.5.3, in the text) after the ACK for the second data-carrying segment is received?
-
-
+```
+Answer:
+EstimatedRTT = (1 – α) • EstimatedRTT + α • SampleRTT
+EstimatedRTT = (1 – 0.125) • 0.001944 + 0.125 • 0.001944
+EstimatedRTT = 0.875 • 0.001944 + 0.125 • 0.001944
+EstimatedRTT = 0,001701 + 0.000243
+EstimatedRTT = 0,001944s
+```
 
 7. What is the length (header plus payload) of each of the first four data-carrying TCP segments?
 
-> **Answer:**
+![no-7.1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-7.1.png)   
+
+![no-7.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-7.2.png)
+
+![no-7.3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-7.3.png)
+
+![no-7.4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-7.4.png)
+``` 
+Answer:
+Packet 1: header = 44 bytes; payload = 0 byte 
+Packet 2: header = 40 bytes; payload = 0 byte 
+Packet 3: header = 32 bytes; payload = 0 byte 
+Packet 4: header = 32 bytes; payload = 1448 bytes 
+```
 
 8. What is the minimum amount of available buffer space advertised to the client by gaia.cs.umass.edu among these first four data-carrying TCP segments7? Does the lack of receiver buffer space ever throttle the sender for these first four data- carrying segments?
+```
+Answer :
+Packet 1: Window = 65535
+Packet 2: Window = 28960
+Packet 3: Window = 2058
+Packet 4: Window = 2058
 
-> **Answer:**
+Therefore the minimum amount of available buffer space advertised to 
+the client by gaia.cs.umass.edu among the first four data-carrying TCP 
+segments is 2058 bytes.
+```
 
 9. Are there any retransmitted segments in the trace file? What did you check for (in the trace) in order to answer this question?
 
-> **Answer :**
+![no-9](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-9.png)
+``` 
+Answer :
+Yes, the lack of receiver buffer space can throttle the sender by 
+causing it to slow down its data transmission rate to ensure that data 
+is not lost or congested at the receiver's end.
+```
 
-10. How much data does the receiver typically acknowledgein an ACK among the first ten data-carrying segments sent from the client to gaia.cs.umass.edu? Can you identify cases where the receiver is ACKing every other received segment (see Table 3.2 in the text)among these first ten data-carrying segments?
+10. How much data does the receiver typically acknowledgein an ACK 
+among the first ten data-carrying segments sent from the client to gaia.
+cs.umass.edu? Can you identify cases where the receiver is ACKing every 
+other received segment (see Table 3.2 in the text)among these first ten 
+data-carrying segments?
 
 > **Answer :**
 
@@ -114,28 +169,76 @@ RTT = 0.001944
 ### **UDP-Problems**
 1. Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. Name these fields.
 
-> **Answer :**
+![no1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-1.png)
+```
+Answer :
+Packet number   : 10 
+Port number     : 1900
+There are four fields : Source port, Destination port, Length, and Checksum
+```
 
-2. 3. By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.
+2. By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.
 
-> **Answer :**
+![no2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.1.png)
 
-4. The value in the Length field is the length of what?.Verify your claim with your captured UDP packet.
+![no2.1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.2.png)
 
-> **Answer :**
+![no2.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.3.png)
 
-5. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
+![no2.3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.4.png)
 
-> **Answer :**
+![no2.4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.5.png)
+```
+Answer :
+The UDP header has a fixed length of 8 bytes. Each of these 4 header 
+fields is 2 bytes long
+```
 
-6. What is the largest possible source port number? (Hint: see the hint in 4.)
+3. The value in the Length field is the length of what?.Verify your claim with your captured UDP packet.
+```
+Answer :
+The length field specifies the number of bytes in the UDP segment 
+(header plus data). An explicit length value is needed since the size 
+of the data field may differ from one UDP segment to the next.
 
-> **Answer :**
+The length of UDP payload for selected packet is 339 bytes. 
+347 bytes - 8 bytes = 339 bytes.
+```
 
-7. What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segment (see Figure 4.13 in the text, and the discussion of IP header fields).
+4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
 
-> **Answer :**
+![no4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-4.png)
+```
+Answer :
+The maximum number of bytes that can be included in a UDP payload is (2^16 – 1) bytes plus the header bytes. 
+This gives 65535 bytes – 8 bytes = 65527 bytes. 
+```
 
-8. Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets.
+5. What is the largest possible source port number? (Hint: see the hint 
+in 4.)
+```
+Answer :
+The largest possible source port number is (2^16 – 1) = 65535. 
+```
 
-> **Answer :**
+6. What is the protocol number for UDP? Give your answer in both hexadecimal and decimal notation. To answer this question, you’ll need to look into the Protocol field of the IP datagram containing this UDP segment (see Figure 4.13 in the text, and the discussion of IP header fields).
+
+![no6](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-6.png)
+```
+Answer : 
+The IP protocol number for UDP is 0x11 hex, which is 17 in decimal value.
+```
+
+7. Examine a pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). Describe the relationship between the port numbers in the two packets.
+
+![no7.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-7.2.png)
+
+![no7.3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-7.3.png)
+```
+Answer : 
+The source port of the UDP packet sent by the host is the same as the 
+destination port of the reply packet, and conversely the destination 
+port of the UDP packet sent by the host is the same as the source port 
+of the reply packet.
+```
+
