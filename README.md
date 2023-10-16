@@ -194,7 +194,7 @@ fields is 2 bytes long
 ```
 
 3. The value in the Length field is the length of what?.Verify your claim with your captured UDP packet.
-![no3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-4.png)
+![no3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/cd26eb842daa15e32ab07f8dfd03fadfee6ad249/assets/udp-3.png)
 ```
 Answer :
 The length field specifies the number of bytes in the UDP segment 
