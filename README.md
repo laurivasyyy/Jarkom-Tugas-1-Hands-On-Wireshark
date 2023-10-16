@@ -27,7 +27,7 @@ b. Port : 80
 
 3. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in this TCP segment that identifies the segment as a SYN segment? Will the TCP receiver in this session be able to use Selective Acknowledgments?
 
-``` js
+``` 
 Answer:
 a. Sequence number (raw) : 4236649187
 b. Look at the flags in the TCP Control Bits to identify a segment as a SYN segment
@@ -36,7 +36,7 @@ c. To determine if the TCP receiver will use Selective Acknowledgments, check th
 
 4. What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is it in the segment that identifies the segment as a SYNACK segment? What is the value of the Acknowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value?
 
-``` js
+``` 
 Answer:
 a. Sequence number (raw) : 1068969752
 b. Look at the flags in the TCP Control Bits to identify a segment as a SYNACK segment
@@ -45,15 +45,17 @@ d. Here's how gaia.cs.umass.edu determined that value:
    1. The client (gaia.cs.umass.edu) initiated the TCP connection by sending a SYN segment to the server.
    2. In the client's SYN segment, it chose an initial sequence number (ISN) and included it in the Sequence Number field. Let's say the ISN is X.
    3. When the server (the destination) received the SYN segment from gaia.cs.umass.edu, it acknowledged the receipt of this segment by sending a SYN-ACK segment in response.
-   4. In the SYN-ACK segment, the Acknowledgment Number field is set to X + 1. This is because the server is acknowledging the receipt of the client's SYN segment, and it acknowledges it by specifying the next          expected sequence number (X + 1).
+   4. In the SYN-ACK segment, the Acknowledgment Number field is set to X + 1. This is because the server is acknowledging the receipt of the client's SYN segment, and
+      it acknowledges it by specifying the next expected sequence number (X + 1).
 ```
  5. What is the sequence number of the TCP segment containing the header of the HTTP POST command?. How many bytes of data are contained in the payload (data) field of this TCP segment? Did all of the data in the transferred file alice.txt fit into this single segment?
 
-``` js
+``` 
 Answer:
 a. Sequence Number (raw) : 4236649188**
 b. Payload (data) size : 1448 bytes**
-c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt" is more than 152K bytes (where 1K is typically defined as 1024 bytes), then it's clear that the entire contents of "alice.txt" cannot fit into this single 1448-byte TCP segment.
+c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt" is more than 152K bytes (where 1K is typically defined as 1024 bytes), then it's clear
+   that the entire contents of "alice.txt" cannot fit into this single 1448-byte TCP segment.
 ```
 6.  Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.
 
@@ -66,7 +68,7 @@ Answer: 0.147682s
 Answer: 0.149626s
 ```
 * What is the RTT for this first data-containing segment?
-``` js
+``` 
 Answer:
 RTT = ACK Timestamp - Segment Sending Timestamp**
 RTT = 0.149626s - 0.147682s**
