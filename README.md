@@ -30,7 +30,7 @@ b. Port : 80
 
 3. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in this TCP segment that identifies the segment as a SYN segment? Will the TCP receiver in this session be able to use Selective Acknowledgments?
 
-![no-3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/1855de3dd37bf53a2774f5d42f72741728484e0f/assets/udp-3.png)
+![no-3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/42009a2e338304484866aa4848578475721d1ac0/assets/tcp-3.png)
 ``` 
 Answer:
 a. Sequence number (raw) : 4236649187
