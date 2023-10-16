@@ -191,7 +191,7 @@ The length field specifies the number of bytes in the UDP segment
 of the data field may differ from one UDP segment to the next.
 
 The length of UDP payload for selected packet is 275 bytes. 
-283 bytes - 8 bytes = 339 bytes.
+283 bytes - 8 bytes = 275 bytes.
 ```
 
 4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
