@@ -171,9 +171,9 @@ data-carrying segments?
 ![no1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/cf9368651a09e58aaed88d12b648b20c082a1721/assets/udp-1.1.png)
 ```
 Answer :
-Packet number   : 10 
-Port number     : 1900
-There are four fields : Source port, Destination port, Length, and Checksum
+a. Packet number   : 5 
+b. SSDP
+c. There are four fields : Source port, Destination port, Length, and Checksum
 ```
 
 2. By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.
@@ -201,8 +201,8 @@ The length field specifies the number of bytes in the UDP segment
 (header plus data). An explicit length value is needed since the size 
 of the data field may differ from one UDP segment to the next.
 
-The length of UDP payload for selected packet is 339 bytes. 
-347 bytes - 8 bytes = 339 bytes.
+The length of UDP payload for selected packet is 275 bytes. 
+283 bytes - 8 bytes = 339 bytes.
 ```
 
 4. What is the maximum number of bytes that can be included in a UDP payload? (Hint: the answer to this question can be determined by your answer to 2. above)
