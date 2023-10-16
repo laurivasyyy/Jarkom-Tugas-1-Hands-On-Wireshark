@@ -182,11 +182,11 @@ c. There are four fields : Source port, Destination port, Length, and Checksum
 
 ![no2.1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/3d99ea461026f49d4c567546371b8bc13dc0d1aa/assets/udp-2.2.png)
 
-![no2.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.3.png)
+![no2.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/30b334417b264182163e038c4392b9ab0ba9affd/assets/udp-2.3.png)
 
-![no2.3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.4.png)
+![no2.3](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/30b334417b264182163e038c4392b9ab0ba9affd/assets/udp-2.4.png)
 
-![no2.4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.5.png)
+![no2.4](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/30b334417b264182163e038c4392b9ab0ba9affd/assets/udp-2.5.png)
 ```
 Answer :
 The UDP header has a fixed length of 8 bytes. Each of these 4 header 
