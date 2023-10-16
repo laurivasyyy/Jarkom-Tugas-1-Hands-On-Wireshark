@@ -168,7 +168,7 @@ data-carrying segments?
 
 ### **UDP-Problems**
 1. Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. Name these fields.
-![no1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/cf9368651a09e58aaed88d12b648b20c082a1721/assets/udp-1.1.png)
+![no1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/3d99ea461026f49d4c567546371b8bc13dc0d1aa/assets/udp-1.png)
 ```
 Answer :
 a. Packet number   : 5 
@@ -178,9 +178,9 @@ c. There are four fields : Source port, Destination port, Length, and Checksum
 
 2. By consulting the displayed information in Wireshark’s packet content field for this packet, determine the length (in bytes) of each of the UDP header fields.
 
-![no2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.1.png)
+![no2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/3d99ea461026f49d4c567546371b8bc13dc0d1aa/assets/udp-2.1.png)
 
-![no2.1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.2.png)
+![no2.1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/3d99ea461026f49d4c567546371b8bc13dc0d1aa/assets/udp-2.2.png)
 
 ![no2.2](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-2.3.png)
 
