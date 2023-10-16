@@ -66,40 +66,29 @@ c. If the payload data in the TCP segment is 1385 bytes, and the file "alice.txt
 ```
 6.  Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.
 
-![no-6a](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-6a.png)
+![no-6a](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/83483c2cc2664e94544f78893b55c008fd73bebf/assets/tcp6.png)
+![no6](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/83483c2cc2664e94544f78893b55c008fd73bebf/assets/tcp6.2.png)
 * At what time was the first segment (the one containing the HTTP POST) in the data-transfer part of the TCP connection sent?
 ``` js
-Answer: 0.147682s
+Answer:0.024047s
 ```
-
-![no-6b](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-6b.png)
-
 * At what time was the ACK for this first data-containing segment received?
 ``` js
-Answer: 0.149626s
+Answer: 0.052671 s
 ```
 * What is the RTT for this first data-containing segment?
 ``` 
 Answer:
 RTT = ACK Timestamp - Segment Sending Timestamp**
-RTT = 0.149626s - 0.147682s
-RTT = 0.001944
+RTT = 0.052671s - 0.024047s
+RTT = 0.028624
 ```
 * What is the RTT value the second data-carrying TCP segment and its ACK?
 ``` 
 Answer:
 RTT = ACK Timestamp - Segment Sending Timestamp
-RTT = 0.149629s - 0.147682s
-RTT = 0.001947s
-```
-* What is the EstimatedRTT value (see Section 3.5.3, in the text) after the ACK for the second data-carrying segment is received?
-```
-Answer:
-EstimatedRTT = (1 – α) • EstimatedRTT + α • SampleRTT
-EstimatedRTT = (1 – 0.125) • 0.001944 + 0.125 • 0.001944
-EstimatedRTT = 0.875 • 0.001944 + 0.125 • 0.001944
-EstimatedRTT = 0,001701 + 0.000243
-EstimatedRTT = 0,001944s
+RTT = 0.052676s - 0.024048s
+RTT = 0.028628s
 ```
 
 7. What is the length (header plus payload) of each of the first four data-carrying TCP segments?
