@@ -59,9 +59,9 @@ d. Here's how gaia.cs.umass.edu determined that value:
 ![no-5](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/tcp-5.png)
 ``` 
 Answer:
-a. Sequence Number (raw) : 4236649188
-b. Payload (data) size : 1448 bytes
-c. If the payload data in the TCP segment is 1448 bytes, and the file "alice.txt" is more than 152K bytes (where 1K is typically defined as 1024 bytes), then it's clear
+a. Sequence Number (raw) : 4236801228
+b. Payload (data) size : 1385 bytes
+c. If the payload data in the TCP segment is 1385 bytes, and the file "alice.txt" is more than 152K bytes (where 1K is typically defined as 1024 bytes), then it's clear
    that the entire contents of "alice.txt" cannot fit into this single 1448-byte TCP segment.
 ```
 6.  Consider the TCP segment containing the HTTP “POST” as the first segment in the data transfer part of the TCP connection.
