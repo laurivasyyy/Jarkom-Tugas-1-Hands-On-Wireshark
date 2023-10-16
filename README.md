@@ -168,8 +168,6 @@ data-carrying segments?
 
 ### **UDP-Problems**
 1. Select one UDP packet from your trace. From this packet, determine how many fields there are in the UDP header. Name these fields.
-
-![no1](https://github.com/laurivasyyy/Jarkom-Tugas-1-Hands-On-Wireshark/blob/d4ad19f6b528dbfec05a2f89213f87ad50752da3/assets/udp-1.png)
 ```
 Answer :
 Packet number   : 10 
